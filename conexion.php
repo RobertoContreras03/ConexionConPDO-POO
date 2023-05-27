@@ -21,9 +21,9 @@ class ConexionPDO{
                 $this->conexion= new PDO('mysql:host='.$this->host.';dbname='.$this->db,$this->user,$this->password,$opcion);
                 if ($this->conexion)
                 {
-                    echo "Conexion exitosa";
+                  //  echo "Conexion exitosa";
                 }else{
-                    echo "Fallo la conexion";
+                   // echo "Fallo la conexion";
                 }
               }
               catch (PDOException $e){
@@ -31,10 +31,14 @@ class ConexionPDO{
                 die();
         }
     }
+    public function getConnection()
+    {
+        return $this->conexion;
+    }
     public function Desconectar()
     {
           $this->conexion= null;
-          echo "Base de datos en desconexion";
+         // echo "Base de datos en desconexion";
     }
 }
 $host = "localhost";
